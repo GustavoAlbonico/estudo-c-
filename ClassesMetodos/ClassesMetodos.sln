@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassesMetodos", "ClassesMetodos\ClassesMetodos.csproj", "{458A655A-F4EB-46C0-A2AA-46AA1D5A603E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metodos", "Metodos\Metodos.csproj", "{F1CA790B-C538-435B-A32F-1654533D02F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetodosParametro", "MetodosParametro\MetodosParametro.csproj", "{478059E8-F910-4FB1-956E-21C5C9EA12A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{458A655A-F4EB-46C0-A2AA-46AA1D5A603E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{458A655A-F4EB-46C0-A2AA-46AA1D5A603E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{458A655A-F4EB-46C0-A2AA-46AA1D5A603E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1CA790B-C538-435B-A32F-1654533D02F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1CA790B-C538-435B-A32F-1654533D02F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1CA790B-C538-435B-A32F-1654533D02F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1CA790B-C538-435B-A32F-1654533D02F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{478059E8-F910-4FB1-956E-21C5C9EA12A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{478059E8-F910-4FB1-956E-21C5C9EA12A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{478059E8-F910-4FB1-956E-21C5C9EA12A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{478059E8-F910-4FB1-956E-21C5C9EA12A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
