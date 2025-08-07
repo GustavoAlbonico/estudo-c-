@@ -11,6 +11,9 @@ Console.WriteLine($"{ford.Modelo} | {ford.Montadora} | {ford.Marca} | {ford.Ano}
 ford.Acelerar();
 Console.WriteLine($"Velocidade máxima: {ford.VelocidadeMaxima()}km/h");
 
+ford.ExibirInfo(modelo: ford.Modelo, montadora: ford.Montadora, marca:ford.Marca, potencia: ford.Potencia);
+ford.ExibirInfo(modelo: ford.Modelo, montadora: ford.Montadora, marca:ford.Marca, potencia: ford.Potencia, ano: 2023);
+
 public class Carro
 {
     public string? Modelo;
@@ -34,12 +37,17 @@ public class Carro
 
     public void Acelerar()
     {
-        System.Console.WriteLine($"Acelerando... o meu {this.Marca}");
+        Console.WriteLine($"Acelerando... o meu {this.Marca}");
     }
 
     public double VelocidadeMaxima()
     {
         return this.Potencia * 1.75;
+    }
+
+    public void ExibirInfo(string? modelo, string? montadora, string? marca, int potencia, int ano = 2025)
+    {
+        Console.WriteLine($"modelo: {modelo} montadora: {montadora} marca: {marca} potencia: {potencia} ano: {ano}");
     }
 
 }
