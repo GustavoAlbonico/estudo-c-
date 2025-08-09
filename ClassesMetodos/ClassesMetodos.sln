@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enum", "Enum\Enum.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiposAnonimos", "TiposAnonimos\TiposAnonimos.csproj", "{83AC1223-3685-4A0C-B519-616F15FF7943}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartialClass", "PartialClass\PartialClass.csproj", "{37412FB4-A53F-460C-BBA6-51559ABEEC41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,5 +78,9 @@ Global
 		{83AC1223-3685-4A0C-B519-616F15FF7943}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83AC1223-3685-4A0C-B519-616F15FF7943}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83AC1223-3685-4A0C-B519-616F15FF7943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37412FB4-A53F-460C-BBA6-51559ABEEC41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37412FB4-A53F-460C-BBA6-51559ABEEC41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37412FB4-A53F-460C-BBA6-51559ABEEC41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37412FB4-A53F-460C-BBA6-51559ABEEC41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
