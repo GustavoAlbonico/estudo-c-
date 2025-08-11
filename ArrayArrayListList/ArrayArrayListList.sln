@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayList", "ArrayList\Arra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "List", "List\List.csproj", "{C2EBCEDD-AFF6-46F6-B77F-12CDD489250B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indexadores", "Indexadores\Indexadores.csproj", "{E991E1D2-F382-4E44-B124-C16FE05E912F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{C2EBCEDD-AFF6-46F6-B77F-12CDD489250B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2EBCEDD-AFF6-46F6-B77F-12CDD489250B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2EBCEDD-AFF6-46F6-B77F-12CDD489250B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E991E1D2-F382-4E44-B124-C16FE05E912F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E991E1D2-F382-4E44-B124-C16FE05E912F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E991E1D2-F382-4E44-B124-C16FE05E912F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E991E1D2-F382-4E44-B124-C16FE05E912F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
