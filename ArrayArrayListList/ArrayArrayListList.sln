@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayMultidimensional", "Ar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayList", "ArrayList\ArrayList.csproj", "{431C3204-1E25-4439-B0CD-662E78E7E48C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "List", "List\List.csproj", "{C2EBCEDD-AFF6-46F6-B77F-12CDD489250B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{431C3204-1E25-4439-B0CD-662E78E7E48C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{431C3204-1E25-4439-B0CD-662E78E7E48C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{431C3204-1E25-4439-B0CD-662E78E7E48C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2EBCEDD-AFF6-46F6-B77F-12CDD489250B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2EBCEDD-AFF6-46F6-B77F-12CDD489250B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2EBCEDD-AFF6-46F6-B77F-12CDD489250B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2EBCEDD-AFF6-46F6-B77F-12CDD489250B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
