@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array", "Array\Array.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModificadorParams", "ModificadorParams\ModificadorParams.csproj", "{B36C734E-E811-473F-B1CA-86D908E1C9C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayMultidimensional", "ArrayMultidimensional\ArrayMultidimensional.csproj", "{CEEC20A8-B773-44B8-8ECD-6DA884C29010}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{B36C734E-E811-473F-B1CA-86D908E1C9C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B36C734E-E811-473F-B1CA-86D908E1C9C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B36C734E-E811-473F-B1CA-86D908E1C9C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEEC20A8-B773-44B8-8ECD-6DA884C29010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEEC20A8-B773-44B8-8ECD-6DA884C29010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEEC20A8-B773-44B8-8ECD-6DA884C29010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEEC20A8-B773-44B8-8ECD-6DA884C29010}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
