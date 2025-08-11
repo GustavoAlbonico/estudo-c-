@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indexadores", "Indexadores\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomClass", "RandomClass\RandomClass.csproj", "{F9997759-E0FA-40DA-8D9A-18F34AEEEE0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercicio", "Exercicio\Exercicio.csproj", "{7D4B56AD-AC31-409B-ABDB-5BADD79C68B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +56,9 @@ Global
 		{F9997759-E0FA-40DA-8D9A-18F34AEEEE0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9997759-E0FA-40DA-8D9A-18F34AEEEE0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9997759-E0FA-40DA-8D9A-18F34AEEEE0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D4B56AD-AC31-409B-ABDB-5BADD79C68B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D4B56AD-AC31-409B-ABDB-5BADD79C68B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D4B56AD-AC31-409B-ABDB-5BADD79C68B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D4B56AD-AC31-409B-ABDB-5BADD79C68B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
