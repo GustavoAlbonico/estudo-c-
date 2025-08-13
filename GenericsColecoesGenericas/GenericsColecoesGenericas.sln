@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack", "Stack\Stack.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue", "Queue\Queue.csproj", "{A736A0A3-019B-4E84-905D-64158C81CD6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadOnlyCollection", "ReadOnlyCollection\ReadOnlyCollection.csproj", "{FA805B15-D808-4178-AF10-923DF91C6BAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{A736A0A3-019B-4E84-905D-64158C81CD6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A736A0A3-019B-4E84-905D-64158C81CD6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A736A0A3-019B-4E84-905D-64158C81CD6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA805B15-D808-4178-AF10-923DF91C6BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA805B15-D808-4178-AF10-923DF91C6BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA805B15-D808-4178-AF10-923DF91C6BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA805B15-D808-4178-AF10-923DF91C6BAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
