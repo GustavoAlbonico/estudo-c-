@@ -22,7 +22,7 @@ teste2.Comparar(f1, f2);
 //Exercio
 ArrayGenerico<int> arrayGenericoInt = new();
 
-arrayGenericoInt.Adicionar(10);
+arrayGenericoInt.Adicionar(10); 
 arrayGenericoInt.Adicionar(20);
 arrayGenericoInt.Adicionar(30);
 arrayGenericoInt.Adicionar(40);
