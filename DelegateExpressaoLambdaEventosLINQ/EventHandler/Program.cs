@@ -1,5 +1,4 @@
-﻿Console.WriteLine("Hello, World!");
-Console.WriteLine("\nUsando o evento OnCriarPedido");
+﻿Console.WriteLine("\nUsando o evento OnCriarPedido");
 
 var pedido = new Pedido();
 
@@ -11,26 +10,24 @@ pedido.CriarPedido();
 
 Console.ReadKey();
 
-delegate void PedidoEventHandler();
-
 class Pedido
 {
     //criar o evento associado ao delegate
-    public event PedidoEventHandler? OnCriarPedido;
+    public event EventHandler? OnCriarPedido;
     public void CriarPedido()
     {
         Console.WriteLine("\nPedido criado !!!");
 
         if (OnCriarPedido != null)
         {
-            OnCriarPedido();
+            OnCriarPedido(this,EventArgs.Empty);
         }
     }
 }
 
 class Email
 {
-    public static void Enviar()
+    public static void Enviar(object? sender, EventArgs e)
     {
         Console.WriteLine("\nEnviando um email");
     }
@@ -38,7 +35,7 @@ class Email
 
 class SMS
 {
-    public static void Enviar()
+    public static void Enviar(object? sender, EventArgs e)
     {
         Console.WriteLine("\nEnviando um SMS");
     }

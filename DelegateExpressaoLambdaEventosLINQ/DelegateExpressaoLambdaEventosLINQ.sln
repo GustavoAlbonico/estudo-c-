@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09DelegatesExercicio", "Del
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11Eventos", "Eventos\11Eventos.csproj", "{E9661791-5EC1-4112-B906-5F32A2095438}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos", "Eventos\Eventos.csproj", "{C47A9EA9-961F-4DD2-914F-9EF0A0EEB549}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12Eventos_EventHandler", "EventHandler_TEventsArgs\12Eventos_EventHandler.csproj", "{C00F51F2-C1EB-4D47-9794-14B5D70AB33B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,5 +70,13 @@ Global
 		{E9661791-5EC1-4112-B906-5F32A2095438}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9661791-5EC1-4112-B906-5F32A2095438}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9661791-5EC1-4112-B906-5F32A2095438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C47A9EA9-961F-4DD2-914F-9EF0A0EEB549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C47A9EA9-961F-4DD2-914F-9EF0A0EEB549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C47A9EA9-961F-4DD2-914F-9EF0A0EEB549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C47A9EA9-961F-4DD2-914F-9EF0A0EEB549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C00F51F2-C1EB-4D47-9794-14B5D70AB33B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C00F51F2-C1EB-4D47-9794-14B5D70AB33B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C00F51F2-C1EB-4D47-9794-14B5D70AB33B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C00F51F2-C1EB-4D47-9794-14B5D70AB33B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
