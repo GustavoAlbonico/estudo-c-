@@ -29,6 +29,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10MetodosDeExtensao", "Meto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13LinqConceitos", "Linq\13LinqConceitos.csproj", "{CBC8D110-7980-488A-9053-A11BABDDC813}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14LINQConsultas1", "LINQConsultas1\14LINQConsultas1.csproj", "{874AE515-998C-4FEA-AED9-774128A66EFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15LINQConsultas2", "LINQConsultas2\15LINQConsultas2.csproj", "{FB289CF1-C537-4E54-9320-7C5DAD1D904A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16LINQAgrupamento1", "LINQAgrupamento1\16LINQAgrupamento1.csproj", "{FE6CD3E1-4435-44D4-A245-C6FF56623FD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,5 +96,17 @@ Global
 		{CBC8D110-7980-488A-9053-A11BABDDC813}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBC8D110-7980-488A-9053-A11BABDDC813}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBC8D110-7980-488A-9053-A11BABDDC813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{874AE515-998C-4FEA-AED9-774128A66EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{874AE515-998C-4FEA-AED9-774128A66EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{874AE515-998C-4FEA-AED9-774128A66EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{874AE515-998C-4FEA-AED9-774128A66EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB289CF1-C537-4E54-9320-7C5DAD1D904A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB289CF1-C537-4E54-9320-7C5DAD1D904A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB289CF1-C537-4E54-9320-7C5DAD1D904A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB289CF1-C537-4E54-9320-7C5DAD1D904A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE6CD3E1-4435-44D4-A245-C6FF56623FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE6CD3E1-4435-44D4-A245-C6FF56623FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE6CD3E1-4435-44D4-A245-C6FF56623FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE6CD3E1-4435-44D4-A245-C6FF56623FD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
