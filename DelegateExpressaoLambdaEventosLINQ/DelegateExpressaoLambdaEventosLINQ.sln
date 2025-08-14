@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12Eventos_EventHandler", "E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10MetodosDeExtensao", "MetodosDeExtensao\10MetodosDeExtensao.csproj", "{2624CD4E-47A4-4E58-89E3-3683EEB67BEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13LinqConceitos", "Linq\13LinqConceitos.csproj", "{CBC8D110-7980-488A-9053-A11BABDDC813}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,5 +86,9 @@ Global
 		{2624CD4E-47A4-4E58-89E3-3683EEB67BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2624CD4E-47A4-4E58-89E3-3683EEB67BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2624CD4E-47A4-4E58-89E3-3683EEB67BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBC8D110-7980-488A-9053-A11BABDDC813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBC8D110-7980-488A-9053-A11BABDDC813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBC8D110-7980-488A-9053-A11BABDDC813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBC8D110-7980-488A-9053-A11BABDDC813}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
