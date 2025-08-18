@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08TratamentoException02", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09ProgAssincrona_Exercicio", "09ProgAssincrona_Exercicio\09ProgAssincrona_Exercicio.csproj", "{39B44752-C4BA-4CC5-BA5F-CDD940D05664}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemaphoreSlim", "SemaphoreSlim\SemaphoreSlim.csproj", "{69E615C1-7E4A-41EF-B7A2-B2D3C3F56347}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{39B44752-C4BA-4CC5-BA5F-CDD940D05664}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39B44752-C4BA-4CC5-BA5F-CDD940D05664}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39B44752-C4BA-4CC5-BA5F-CDD940D05664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69E615C1-7E4A-41EF-B7A2-B2D3C3F56347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69E615C1-7E4A-41EF-B7A2-B2D3C3F56347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69E615C1-7E4A-41EF-B7A2-B2D3C3F56347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69E615C1-7E4A-41EF-B7A2-B2D3C3F56347}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
