@@ -191,3 +191,131 @@ var grupo = alunos2.GroupBy(x => new { x.Curso, x.Sexo })
 Console.WriteLine("\n--------------- TO LOOK UP -------------------");
 var alunosAgrupadosPorIdade2 = alunos.ToLookup(aluno => aluno.Idade); //ele ja faz a pesquisa na hora
 
+//------------------------JUNÇÃO-----------------------------//
+Console.WriteLine("\n--------------- JOIN -------------------");
+Console.WriteLine("------------INNER--------------"); //tem em ambas as fontes
+
+/*
+var innerJoin = contexto.Funcionarios           //Outer data source
+.Join(
+    contexto.Setores,                           //Inner data source
+        funcionario => funcionario.SetorId,     //Inner Key Selector
+        setor => setor.SetorId,                 //Outer Key Selector
+        (funcionario, setor) => new             //Projetando os dados em um conjunto
+        {
+            NomeFuncionario = funcionario.FuncionarioNome,
+            NomeSetor = setor.SetorNome,
+            CargoFuncionario = funcionario.FuncionarioCargo
+        }).toList();
+*/
+
+Console.WriteLine("------------LEFT--------------"); //todas da primeira fonte e o que são iguais em ambas fontes
+/*
+var leftJoin = (from f in contexto.Funcionarios
+                join s in contexto.Setores
+                on f.SetorId equals s.SetorId
+                into funciSetorGrupo
+                from setor in funciSetorGrupo.DefaultIfEmpty()
+                select new
+                {
+                    NomeFuncionario = f.FuncionarioNome,
+                    CargoFuncionario = f.FuncionarioCargo,
+                    NomeSetor = setor.SetorNome
+                }).toList();
+*/
+
+
+Console.WriteLine("------------RIGHT--------------"); //todas da segunda fonte e o que são iguais em ambas fontes
+//como não possui suporte apenas precisa inverter as tabelas
+
+/*
+var rightJoin = (from f in contexto.Setores
+                join s in contexto.Funcionarios
+                on f.SetorId equals s.SetorId
+                into SetorFunciGrupo
+                from setor in SetorFunciGrupo.DefaultIfEmpty()
+                select new
+                {
+                    NomeFuncionario = f.FuncionarioNome,
+                    CargoFuncionario = f.FuncionarioCargo,
+                    NomeSetor = setor.SetorNome
+                }).toList();
+*/
+
+Console.WriteLine("------------FULL--------------"); //todas da primeira fonte e da segunda fonte
+//como não possui suporte apenas precisa utilizar o left e right e juntar os resultados
+
+/*
+var leftJoin = (from f in contexto.Funcionarios
+                join s in contexto.Setores
+                on f.SetorId equals s.SetorId
+                into funciSetorGrupo
+                from setor in funciSetorGrupo.DefaultIfEmpty()
+                select new
+                {
+                    NomeFuncionario = f.FuncionarioNome,
+                    CargoFuncionario = f.FuncionarioCargo,
+                    NomeSetor = setor.SetorNome
+                }).toList();
+
+var rightJoin = (from f in contexto.Setores
+                join s in contexto.Funcionarios
+                on f.SetorId equals s.SetorId
+                into SetorFunciGrupo
+                from setor in SetorFunciGrupo.DefaultIfEmpty()
+                select new
+                {
+                    NomeFuncionario = f.FuncionarioNome,
+                    CargoFuncionario = f.FuncionarioCargo,
+                    NomeSetor = setor.SetorNome
+                }).toList();
+
+
+var fullJoin = leftJoin.Union(rightJoin);
+*/
+
+Console.WriteLine("------------CROSS--------------"); //faz a junção de duas coleções para obter uma nova coleção onde cada par combinado esta presentado
+//EX  A = {a , b}
+//    B = {1 , 2, 3}  
+//RESULTADO = A x B ={(a,1),(a,2),(a,3),(b,1),(b,2),(b,3)}
+
+/*
+var crossJoin = from f in contexto.Funcionarios
+                from s in contexto.Setores
+                select new
+                {
+                    Nome = f.FuncionarioNome,
+                    Cargo = f.FuncionarioCargo,
+                    Setor = s.SetorNome
+                };
+*/ 
+
+Console.WriteLine("\n--------------- GROUP JOIN -------------------"); //retorna um resultado em grupo com base na chave de grupo
+/*
+var groupJoin = contexto.Setores                         //Outer data source
+                .GroupJoin(contexto.Funcionarios ,       //Inner data source
+                setor => setor.SetorId,                  //Outer Key Selector
+                funcionario => funcionario.SetorId,      //Inner Key Selector
+                (funcionario, funcionariosGrupo) => new  //Projetando os dados em um conjunto
+                {
+                    Funcionarios = funcionariosGrupo,
+                    NomeSetor = funcionario.SetorNome,
+                }).toList();
+*/
+
+Console.WriteLine("\n--------------- JOIN EXEMPLO ALEATORIO MAIS COMPLEXO-------------------"); 
+
+var consulta = from pessoa in pessoas
+               join endereco in enderecos
+               on pessoa.EnderecoId equals endereco.Id
+               join curso in cursos
+               on pessoa.CursoId equals curso.Id
+               select new
+               {
+                   ID = pessoa.Id,
+                   PessoaNome = pessoa.Nome,
+                   CursoNome = curso.Nome,
+                   EnderecoLocal = endereco.Local,
+               };
+
+FonteDados.ExibirLista(consulta);
