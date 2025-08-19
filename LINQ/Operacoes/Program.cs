@@ -163,3 +163,31 @@ var menorIdade2 = alunos.Min(aluno => aluno.Idade > 20 ? aluno.Idade : 0);
 Console.WriteLine("\n--------------- MIN BY -------------------");
 Aluno? maisNovo = alunos.MinBy(aluno => aluno.Nascimento?.Year);
 
+//------------------------QUANTIFICAÇÃO-----------------------------//
+Console.WriteLine("\n--------------- ALL -------------------");
+bool todosSaoPares = idades.All(idade => idade % 2 == 0);
+bool todosSaoMaiorIdade= alunos.All(aluno => aluno.Idade > 18);
+
+Console.WriteLine("\n--------------- ANY -------------------");
+bool existeAlgumPar = idades.Any(idade => idade % 2 == 0);
+bool existeAlgumMaiorIdade = alunos.Any(aluno => aluno.Idade > 18);
+
+Console.WriteLine("\n--------------- CONTAINS -------------------");
+bool existePar = idades.Contains(10);
+
+//------------------------AGRUPAMENTO-----------------------------//
+Console.WriteLine("\n--------------- GROUP BY -------------------");
+var alunosAgrupadosPorIdade = alunos.GroupBy(aluno => aluno.Idade);
+var grupo = alunos2.GroupBy(x => new { x.Curso, x.Sexo })
+                  .OrderBy(g => g.Key.Curso)
+                  .ThenBy(g => g.Key.Sexo)
+                  .Select(g => new
+                  {
+                      g.Key.Curso,
+                      g.Key.Sexo,
+                      Alunos = g.OrderBy(x => x.Nome),
+                  });
+
+Console.WriteLine("\n--------------- TO LOOK UP -------------------");
+var alunosAgrupadosPorIdade2 = alunos.ToLookup(aluno => aluno.Idade); //ele ja faz a pesquisa na hora
+
