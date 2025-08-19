@@ -11,9 +11,17 @@ public class Aluno
         Nascimento = nascimento;
     }
 
+    public Aluno(string? nome, int idade, DateTime nascimento, string curso, char sexo) : this(nome, idade, nascimento)
+    {
+        Curso = curso;
+        Sexo = sexo;
+    }
+
     public string? Nome { get; set; }
     public int Idade { get; set; }
     public DateTime? Nascimento { get; set; }
+    public string Curso { get; set; }
+    public char Sexo { get; set; }
 
     public override string ToString()
     {

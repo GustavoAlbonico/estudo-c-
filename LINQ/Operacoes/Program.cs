@@ -1,4 +1,6 @@
-﻿var listas = new List<List<int>> {
+﻿using System.Runtime.CompilerServices;
+
+var listas = new List<List<int>> {
     new List<int> {1, 2, 3},
     new List<int> {16},
     new List<int> {12, 50, 40, 22},
@@ -16,10 +18,14 @@ foreach (var item in resultado)
 var idades = FonteDados.GetIdades();
 var nomes = FonteDados.GetNomes();
 var alunos = FonteDados.GetAlunos();
+var alunos2 = FonteDados.GetAlunos2();
 var paises1 = FonteDados.GetPaises1();
 var paises2 = FonteDados.GetPaises2();
 var turmaA = FonteDados.GetTurmaA();
 var turmaB = FonteDados.GetTurmaB();
+var pessoas = FonteDados.GetPessoas();
+var enderecos = FonteDados.GetEnderecos();
+var cursos = FonteDados.GetCursos();
 
 //------------------------CONJUNTO-----------------------------//
 
@@ -90,11 +96,70 @@ IQueryable<int> idadesInvetidasIQueryable = idades.AsQueryable().Reverse();
 
 //------------------------AGREGAÇÃO-----------------------------//
 Console.WriteLine("\n--------------- AGGREGATE -------------------");
+Console.WriteLine("------------1ª sobrecarga--------------");
+
+var nomesSeparadosPorVirgula = nomes.Aggregate((nome1, nome2) => nome1 + ", " + nome2);
+Console.WriteLine(nomesSeparadosPorVirgula);
+
+var totalIdade = idades.Aggregate((idade1, idade2) => idade1 + idade2);
+Console.WriteLine(totalIdade);
+
+Console.WriteLine("\n------------2ª sobrecarga--------------");
+var nomesAlunos = alunos.Aggregate("Nomes : ", (semente, aluno) => semente += aluno.Nome + ", ");
+int indice = nomesAlunos.LastIndexOf(",");
+nomesAlunos = nomesAlunos.Remove(indice);
+Console.WriteLine(nomesAlunos);
+
+Console.WriteLine("\n------------3ª sobrecarga--------------");
+var nomesAlunos1 = alunos.Aggregate(
+    "Nomes : ",
+    (semente, aluno) => semente += aluno.Nome + ", ",
+    resultado => resultado.Substring(0 , resultado.Length - 2)
+    // resultado => resultado[..^2] //OU
+);
+Console.WriteLine(nomesAlunos1);
+
 Console.WriteLine("\n--------------- AVERAGE -------------------");
-Console.WriteLine("\n--------------- COUNT -------------------");
-Console.WriteLine("\n--------------- LONG COUNT -------------------");
-Console.WriteLine("\n--------------- MAX -------------------");
-Console.WriteLine("\n--------------- MAX BY -------------------");
-Console.WriteLine("\n--------------- MIN -------------------");
-Console.WriteLine("\n--------------- MIN BY -------------------");
+var mediaIdades = alunos.Average(aluno => aluno.Idade);
+
+Console.WriteLine("\n--------------- COUNT -------------------");//se for null lança exceção in32 tamanho limite
+Console.WriteLine("------------1ª sobrecarga--------------");
+var quantidadeNomes = nomes.Count();
+
+Console.WriteLine("\n------------2ª sobrecarga--------------");
+var quantidadeNomes1 = nomes.Count(nome => nome.Contains('c'));
+
+Console.WriteLine("\n--------------- LONG COUNT -------------------");//se for null lança exceção
+Console.WriteLine("------------1ª sobrecarga--------------");
+var quantidadeNomes2 = nomes.LongCount();
+
+Console.WriteLine("\n------------2ª sobrecarga--------------");
+var quantidadeNomes3 = nomes.LongCount(nome => nome.Contains('c'));
+
 Console.WriteLine("\n--------------- SUM -------------------");
+var somaIdades = idades.Sum();
+
+var somaIdades2 = idades.Sum(idade =>
+{
+    if (idade > 20)
+        return idade;
+    else
+        return 0;
+});
+
+var somaIdades3 = idades.Sum(idade => idade > 20 ? idade : 0);
+
+Console.WriteLine("\n--------------- MAX -------------------");
+var maiorIdade = alunos.Max(aluno => aluno.Idade);
+var maiorIdade2 = alunos.Max(aluno => aluno.Idade > 20 ? aluno.Idade : 0);
+
+Console.WriteLine("\n--------------- MAX BY -------------------");
+Aluno? maisVelho = alunos.MaxBy(aluno => aluno.Nascimento?.Year);
+
+Console.WriteLine("\n--------------- MIN -------------------");
+var menorIdade = alunos.Min(aluno => aluno.Idade);
+var menorIdade2 = alunos.Min(aluno => aluno.Idade > 20 ? aluno.Idade : 0);
+
+Console.WriteLine("\n--------------- MIN BY -------------------");
+Aluno? maisNovo = alunos.MinBy(aluno => aluno.Nascimento?.Year);
+
