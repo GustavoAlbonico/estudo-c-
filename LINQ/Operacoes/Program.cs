@@ -319,3 +319,44 @@ var consulta = from pessoa in pessoas
                };
 
 FonteDados.ExibirLista(consulta);
+
+//------------------------ELEMENTO-----------------------------//
+Console.WriteLine("\n--------------- ELEMENT AT-------------------");//retorna um elemento no indice ENVIADO | SE DER ERRO Exception
+var elementAt = nomes.ElementAt(2);
+var elementAt2 = alunos.ElementAt(5);
+
+Console.WriteLine("\n--------------- ELEMENT AT OR DEFAULT-------------------");//retorna um elemento no indice ENVIADO | SE DER ERRO RETORNA null ou 0 depende o tipo de referencia
+var elementAtOrDefault = nomes.ElementAtOrDefault(2);
+var elementAtOrDefault2 = alunos.ElementAtOrDefault(5);
+
+Console.WriteLine("\n--------------- FIRST-------------------");
+var primeiro = nomes.First();
+var primeiro2 = alunos.First(aluno => aluno.Idade > 10);
+
+Console.WriteLine("\n--------------- FIRST OR DEFAULT-------------------");
+var primeiroOrDefault = nomes.FirstOrDefault();
+var primeiroOrDefault2 = alunos.FirstOrDefault();
+
+Console.WriteLine("\n--------------- LAST-------------------");
+var ultimo = nomes.Last();
+var ultimo2 = alunos.Last(aluno => aluno.Idade > 10);
+
+Console.WriteLine("\n--------------- LAST OR DEFAULT-------------------");
+var ultimoOrDefault = nomes.LastOrDefault();
+var ultimoOrDefault2 = alunos.LastOrDefault();
+
+Console.WriteLine("\n--------------- SINGLE-------------------");//retorna APENAS 1 elemento, SE retornar menos que UM OU MAIS da 'erro'
+var single = nomes.Single();//vai dar erro pq tem mais de 1 na lista
+var single2 = alunos.Single(aluno => aluno.Idade > 10);//vai dar erro pq tem mais de 1 na lista que atende a condição
+
+Console.WriteLine("\n--------------- SINGLE OR DEFAULT-------------------");//se o resultado tiver mais que um elemento continua lançando a excecao
+var singleOrDefault = nomes.SingleOrDefault();//vai dar erro pq tem mais de 1 na lista
+var singleOrDefault2 = alunos.SingleOrDefault(aluno => aluno.Idade > 10);//vai dar erro pq tem mais de 1 na lista que atende a condição
+
+Console.WriteLine("\n--------------- DEFAULT IF EMPTY-------------------"); //sempre me retornar uma LISTA (IEnumerable)
+var defaultIfEmpty = idades.DefaultIfEmpty(); //se tiver vazio o retorno vai 0 ja que é int caso contrario retorna a lista
+var defaultIfEmpty2 = idades.DefaultIfEmpty(5); //se tiver vazio o retorno vai 5 ja que é int caso contrario retorna a lista
+
+var alunoMaisVelho = alunos.Where(aluno => aluno.Idade > 100) //como não existe aluno com esse filtro
+                            .DefaultIfEmpty(maisVelho) //me retorna esse aluno como padrao
+                            .First();//para pegar 1 somente
