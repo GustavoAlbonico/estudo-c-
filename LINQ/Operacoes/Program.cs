@@ -120,6 +120,19 @@ var nomesAlunos1 = alunos.Aggregate(
 );
 Console.WriteLine(nomesAlunos1);
 
+Console.WriteLine("\n--------------- AGGREGATE BY 9.0 NET-------------------");
+var idadesAggregateBy = idades.AggregateBy(
+    keySelector: n => n % 2 == 0 ? "Par" : "Impar", // Agrupa por Par ou Impar
+    seed: 0,                                       // Valor incial para a cotagem
+    func: (contagem, _) => contagem + 1             // Incrementar contagem p/cada elemento
+);
+
+var alunos2AggregateBy = alunos2.AggregateBy(
+    aluno2 => aluno2.Curso,
+    0,
+    (acumulador, aluno2) => acumulador + aluno2.Idade
+);
+
 Console.WriteLine("\n--------------- AVERAGE -------------------");
 var mediaIdades = alunos.Average(aluno => aluno.Idade);
 
@@ -129,6 +142,15 @@ var quantidadeNomes = nomes.Count();
 
 Console.WriteLine("\n------------2ª sobrecarga--------------");
 var quantidadeNomes1 = nomes.Count(nome => nome.Contains('c'));
+
+Console.WriteLine("\n--------------- COUNT BY .net9.0-------------------");
+
+Console.WriteLine("item | qtd_encontrada");
+var idadesCountBy = idades.CountBy(idade => idade);
+FonteDados.ExibirLista(idadesCountBy);
+
+var pessoasCountBy = pessoas.CountBy(pessoa => pessoa.CursoId);
+FonteDados.ExibirLista(pessoasCountBy);
 
 Console.WriteLine("\n--------------- LONG COUNT -------------------");//se for null lança exceção
 Console.WriteLine("------------1ª sobrecarga--------------");
@@ -322,6 +344,9 @@ var consulta = from pessoa in pessoas
 FonteDados.ExibirLista(consulta);
 
 //------------------------ELEMENTO-----------------------------//
+Console.WriteLine("\n--------------- INDEX .NET9.0-------------------");
+var nomesComIndex = nomes.Index();
+
 Console.WriteLine("\n--------------- ELEMENT AT-------------------");//retorna um elemento no indice ENVIADO | SE DER ERRO Exception
 var elementAt = nomes.ElementAt(2);
 var elementAt2 = alunos.ElementAt(5);
