@@ -114,7 +114,7 @@ Console.WriteLine("\n------------3ª sobrecarga--------------");
 var nomesAlunos1 = alunos.Aggregate(
     "Nomes : ",
     (semente, aluno) => semente += aluno.Nome + ", ",
-    resultado => resultado.Substring(0 , resultado.Length - 2)
+    resultado => resultado.Substring(0, resultado.Length - 2)
     // resultado => resultado[..^2] //OU
 );
 Console.WriteLine(nomesAlunos1);
@@ -166,7 +166,7 @@ Aluno? maisNovo = alunos.MinBy(aluno => aluno.Nascimento?.Year);
 //------------------------QUANTIFICAÇÃO-----------------------------//
 Console.WriteLine("\n--------------- ALL -------------------");
 bool todosSaoPares = idades.All(idade => idade % 2 == 0);
-bool todosSaoMaiorIdade= alunos.All(aluno => aluno.Idade > 18);
+bool todosSaoMaiorIdade = alunos.All(aluno => aluno.Idade > 18);
 
 Console.WriteLine("\n--------------- ANY -------------------");
 bool existeAlgumPar = idades.Any(idade => idade % 2 == 0);
@@ -275,9 +275,9 @@ var fullJoin = leftJoin.Union(rightJoin);
 */
 
 Console.WriteLine("------------CROSS--------------"); //faz a junção de duas coleções para obter uma nova coleção onde cada par combinado esta presentado
-//EX  A = {a , b}
-//    B = {1 , 2, 3}  
-//RESULTADO = A x B ={(a,1),(a,2),(a,3),(b,1),(b,2),(b,3)}
+                                                      //EX  A = {a , b}
+                                                      //    B = {1 , 2, 3}  
+                                                      //RESULTADO = A x B ={(a,1),(a,2),(a,3),(b,1),(b,2),(b,3)}
 
 /*
 var crossJoin = from f in contexto.Funcionarios
@@ -288,7 +288,7 @@ var crossJoin = from f in contexto.Funcionarios
                     Cargo = f.FuncionarioCargo,
                     Setor = s.SetorNome
                 };
-*/ 
+*/
 
 Console.WriteLine("\n--------------- GROUP JOIN -------------------"); //retorna um resultado em grupo com base na chave de grupo
 /*
@@ -303,7 +303,7 @@ var groupJoin = contexto.Setores                         //Outer data source
                 }).toList();
 */
 
-Console.WriteLine("\n--------------- JOIN EXEMPLO ALEATORIO MAIS COMPLEXO-------------------"); 
+Console.WriteLine("\n--------------- JOIN EXEMPLO ALEATORIO MAIS COMPLEXO-------------------");
 
 var consulta = from pessoa in pessoas
                join endereco in enderecos
@@ -360,3 +360,33 @@ var defaultIfEmpty2 = idades.DefaultIfEmpty(5); //se tiver vazio o retorno vai 5
 var alunoMaisVelho = alunos.Where(aluno => aluno.Idade > 100) //como não existe aluno com esse filtro
                             .DefaultIfEmpty(maisVelho) //me retorna esse aluno como padrao
                             .First();//para pegar 1 somente
+
+//------------------------CONVERSÃO-----------------------------// 
+Console.WriteLine("\n---------------TO LIST-------------------");
+//IEnumerable  = readyonly é lido em tempo de execução
+//List  = pode alterar e carrega todos os itens em memoria e tem métodos a mais
+var listaPaises = paises1.ToList();
+
+Console.WriteLine("\n---------------TO ARRAY-------------------");
+var arrayPaises = listaPaises.ToArray();
+
+Console.WriteLine("\n---------------TO DICTIONARY-------------------");
+var dicionarioPessoas = pessoas.ToDictionary<Pessoa, int>(pessoa => pessoa.Id);
+
+foreach (var chave in dicionarioPessoas.Keys)
+{
+    Console.WriteLine($"Chave: {chave}, Valor: {(dicionarioPessoas[chave] as Pessoa).Nome}");
+}
+
+Console.WriteLine("\n---------------TO LOOK UP-------------------");//um Look Up pode ter chaves (Key) com valores iguais 
+var lookUpPessoas = pessoas.ToLookup(pessoa => pessoa.CursoId);//parece um group by po cursoId
+
+
+foreach (var lookup in lookUpPessoas)
+{
+    Console.WriteLine(lookup.Key);
+    foreach (var pessoa in lookUpPessoas[lookup.Key])
+    {
+       Console.WriteLine($"\t{pessoa.Nome}");
+    }
+}
