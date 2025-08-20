@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Collections;
+using System.Runtime.CompilerServices;
 
 var listas = new List<List<int>> {
     new List<int> {1, 2, 3},
@@ -391,6 +392,22 @@ foreach (var lookup in lookUpPessoas)
     }
 }
 
+Console.WriteLine("\n---------------AS ENUMERABLE-------------------");//MAIS LENTO
+var enumerable = nomes.AsEnumerable();
+
+Console.WriteLine("\n---------------AS QUERYABLE-------------------");//MAIS RÁPIDO //RECOMENDADO UTILIZAR COM BANCO DE DADOS E COISAS EXTERNAS 
+var queryable = nomes.AsQueryable();
+
+Console.WriteLine("\n---------------CAST-------------------");//CONVERTE TODOS OS ELEMENTOS PARA O TIPO ESPECIFICADO
+ArrayList numerosCast = new ArrayList { 1, 2, 3, 4 };
+var castString = numerosCast.Cast<int>();
+FonteDados.ExibirLista(castString);
+
+Console.WriteLine("\n---------------OF TYPE-------------------"); //Filtra os elementos daquele tipo
+ArrayList listaOfType = new ArrayList { 1, 2, 3, 4, "jose", "Carlos", true, DateTime.Now };
+var ofTypeString = listaOfType.OfType<string>();
+FonteDados.ExibirLista(ofTypeString);
+
 //------------------------PARTICIONAMENTO-----------------------------// SÃO TODOS COM EXECUÇÃO ADIADA
 Console.WriteLine("\n---------------TAKE-------------------");
 var take4 = idades.Take(4); //pega os 4 primeiros 
@@ -419,32 +436,34 @@ Console.WriteLine("------------2ª sobrecarga--------------");
 var skipWhile2 = nomes.SkipWhile((nome, index) => nomes.Length > index);
 
 //----------------EXEMPLO DE PAGINAÇÃO-------------------
+/*
 int registrosPorPagina = 3;
 int numeroPagina;
 
-// do
-// {
-//     Console.WriteLine("\nInforme o no. de página entre 1 e 4 : ");
-//     if (int.TryParse(Console.ReadLine(), out numeroPagina))
-//     {
-//         if (numeroPagina > 0 && numeroPagina < 5)
-//         {
-//             var pessoasPaginadas = pessoas
-//                                    .Skip((numeroPagina - 1) * registrosPorPagina)
-//                                    .Take(registrosPorPagina)
-//                                    .ToList();
+do
+{
+    Console.WriteLine("\nInforme o no. de página entre 1 e 4 : ");
+    if (int.TryParse(Console.ReadLine(), out numeroPagina))
+    {
+        if (numeroPagina > 0 && numeroPagina < 5)
+        {
+            var pessoasPaginadas = pessoas
+                                   .Skip((numeroPagina - 1) * registrosPorPagina)
+                                   .Take(registrosPorPagina)
+                                   .ToList();
 
-//             Console.Write("\nPag. : " + numeroPagina);
+            Console.Write("\nPag. : " + numeroPagina);
 
-//             FonteDados.ExibirLista(pessoasPaginadas);
-//         }
-//         else
-//             Console.WriteLine("Informe o no. de página válido");
-//     }
-//     else
-//         Console.WriteLine("Informe o no. de página válido");
+            FonteDados.ExibirLista(pessoasPaginadas);
+        }
+        else
+            Console.WriteLine("Informe o no. de página válido");
+    }
+    else
+        Console.WriteLine("Informe o no. de página válido");
 
-// } while (true);
+} while (true);
+*/
 
 //------------------------GERAÇÃO-----------------------------//
 Console.WriteLine("\n---------------RANGE-------------------");//EXECUÇÃO ADIADA
