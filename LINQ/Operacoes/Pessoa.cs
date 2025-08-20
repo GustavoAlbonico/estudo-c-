@@ -12,4 +12,9 @@ public class Pessoa
     public string? Nome { get; set; }
     public int EnderecoId { get; set; }
     public int CursoId { get; set; }
+
+    public override string ToString()
+    {
+        return $"{Id} - {Nome} - {EnderecoId} - {CursoId}";
+    }
 }

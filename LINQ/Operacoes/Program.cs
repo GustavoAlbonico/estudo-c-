@@ -346,12 +346,12 @@ var ultimoOrDefault = nomes.LastOrDefault();
 var ultimoOrDefault2 = alunos.LastOrDefault();
 
 Console.WriteLine("\n--------------- SINGLE-------------------");//retorna APENAS 1 elemento, SE retornar menos que UM OU MAIS da 'erro'
-var single = nomes.Single();//vai dar erro pq tem mais de 1 na lista
-var single2 = alunos.Single(aluno => aluno.Idade > 10);//vai dar erro pq tem mais de 1 na lista que atende a condição
+// var single = nomes.Single();//vai dar erro pq tem mais de 1 na lista
+// var single2 = alunos.Single(aluno => aluno.Idade > 10);//vai dar erro pq tem mais de 1 na lista que atende a condição
 
 Console.WriteLine("\n--------------- SINGLE OR DEFAULT-------------------");//se o resultado tiver mais que um elemento continua lançando a excecao
-var singleOrDefault = nomes.SingleOrDefault();//vai dar erro pq tem mais de 1 na lista
-var singleOrDefault2 = alunos.SingleOrDefault(aluno => aluno.Idade > 10);//vai dar erro pq tem mais de 1 na lista que atende a condição
+// var singleOrDefault = nomes.SingleOrDefault();//vai dar erro pq tem mais de 1 na lista
+// var singleOrDefault2 = alunos.SingleOrDefault(aluno => aluno.Idade > 10);//vai dar erro pq tem mais de 1 na lista que atende a condição
 
 Console.WriteLine("\n--------------- DEFAULT IF EMPTY-------------------"); //sempre me retornar uma LISTA (IEnumerable)
 var defaultIfEmpty = idades.DefaultIfEmpty(); //se tiver vazio o retorno vai 0 ja que é int caso contrario retorna a lista
@@ -387,6 +387,61 @@ foreach (var lookup in lookUpPessoas)
     Console.WriteLine(lookup.Key);
     foreach (var pessoa in lookUpPessoas[lookup.Key])
     {
-       Console.WriteLine($"\t{pessoa.Nome}");
+        Console.WriteLine($"\t{pessoa.Nome}");
     }
 }
+
+//------------------------PARTICIONAMENTO-----------------------------// SÃO TODOS COM EXECUÇÃO ADIADA
+Console.WriteLine("\n---------------TAKE-------------------");
+var take4 = idades.Take(4); //pega os 4 primeiros 
+
+Console.WriteLine("\n---------------TAKE WHILE-------------------");
+Console.WriteLine("------------1ª sobrecarga--------------");
+// { 30, 44, 35, 20, 39, 30, 45, 33, 44, 90, 100, 50 };
+var takeWhile = idades.TakeWhile(idade => idade > 20); //pega todas maior que 20 até falhar na primeira falha ele para de pegar independentemente se tiver outro menos que 20 depois.
+FonteDados.ExibirLista(takeWhile);
+
+var where = idades.Where(idade => idade > 20);//se comporta diferente
+FonteDados.ExibirLista(where);
+
+Console.WriteLine("------------2ª sobrecarga--------------");
+var takeWhile2 = nomes.TakeWhile((nome, index) => nomes.Length > index);
+FonteDados.ExibirLista(takeWhile2);
+
+Console.WriteLine("\n---------------SKIP-------------------");
+var skip4 = idades.Skip(4); //ignora os 4 primeiros 
+
+Console.WriteLine("\n---------------SKIP WHILE-------------------");
+Console.WriteLine("------------1ª sobrecarga--------------");
+var skipWhile = idades.SkipWhile(idade => idade > 20); //ignora todas maior que 20 até falhar na primeira falha ele para de ignorar independentemente se tiver outro menos que 20 depois.
+
+Console.WriteLine("------------2ª sobrecarga--------------");
+var skipWhile2 = nomes.SkipWhile((nome, index) => nomes.Length > index);
+
+//----------------EXEMPLO DE PAGINAÇÃO-------------------
+int registrosPorPagina = 3;
+int numeroPagina;
+
+do
+{
+    Console.WriteLine("\nInforme o no. de página entre 1 e 4 : ");
+    if (int.TryParse(Console.ReadLine(), out numeroPagina))
+    {
+        if (numeroPagina > 0 && numeroPagina < 5)
+        {
+            var pessoasPaginadas = pessoas
+                                   .Skip((numeroPagina - 1) * registrosPorPagina)
+                                   .Take(registrosPorPagina)
+                                   .ToList();
+
+            Console.Write("\nPag. : " + numeroPagina);
+
+            FonteDados.ExibirLista(pessoasPaginadas);
+        }
+        else
+            Console.WriteLine("Informe o no. de página válido");
+    }
+    else
+        Console.WriteLine("Informe o no. de página válido");
+        
+} while (true);
