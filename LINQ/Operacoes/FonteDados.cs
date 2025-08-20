@@ -110,6 +110,11 @@ public class FonteDados
         yield return "Japão";
     }
 
+    public static IEnumerable<int> GetDataNull()
+    {
+        return null;
+    }
+
     public static void ExibirLista<T>(IEnumerable<T> lista)
     {
         Console.WriteLine("\n");

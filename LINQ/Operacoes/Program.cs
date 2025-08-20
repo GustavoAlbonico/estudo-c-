@@ -422,26 +422,56 @@ var skipWhile2 = nomes.SkipWhile((nome, index) => nomes.Length > index);
 int registrosPorPagina = 3;
 int numeroPagina;
 
-do
-{
-    Console.WriteLine("\nInforme o no. de página entre 1 e 4 : ");
-    if (int.TryParse(Console.ReadLine(), out numeroPagina))
-    {
-        if (numeroPagina > 0 && numeroPagina < 5)
-        {
-            var pessoasPaginadas = pessoas
-                                   .Skip((numeroPagina - 1) * registrosPorPagina)
-                                   .Take(registrosPorPagina)
-                                   .ToList();
+// do
+// {
+//     Console.WriteLine("\nInforme o no. de página entre 1 e 4 : ");
+//     if (int.TryParse(Console.ReadLine(), out numeroPagina))
+//     {
+//         if (numeroPagina > 0 && numeroPagina < 5)
+//         {
+//             var pessoasPaginadas = pessoas
+//                                    .Skip((numeroPagina - 1) * registrosPorPagina)
+//                                    .Take(registrosPorPagina)
+//                                    .ToList();
 
-            Console.Write("\nPag. : " + numeroPagina);
+//             Console.Write("\nPag. : " + numeroPagina);
 
-            FonteDados.ExibirLista(pessoasPaginadas);
-        }
-        else
-            Console.WriteLine("Informe o no. de página válido");
-    }
-    else
-        Console.WriteLine("Informe o no. de página válido");
-        
-} while (true);
+//             FonteDados.ExibirLista(pessoasPaginadas);
+//         }
+//         else
+//             Console.WriteLine("Informe o no. de página válido");
+//     }
+//     else
+//         Console.WriteLine("Informe o no. de página válido");
+
+// } while (true);
+
+//------------------------GERAÇÃO-----------------------------//
+Console.WriteLine("\n---------------RANGE-------------------");//EXECUÇÃO ADIADA
+var numeros = Enumerable.Range(10, 10); //inicia com X | gera X elementos
+FonteDados.ExibirLista(numeros);
+
+Console.WriteLine("\n---------------REPEAT<T>-------------------");//EXECUÇÃO ADIADA
+var repetindo = Enumerable.Repeat("Repetindo...", 10); //escreve X | repete X vezes
+FonteDados.ExibirLista(repetindo);
+
+Console.WriteLine("\n---------------EMPTY<T>-------------------");
+var colecaoVazia = Enumerable.Empty<string>;
+var colecaoVaziaAluno = Enumerable.Empty<Aluno>;
+
+var evitandoErroAoExibirColecaoNull = FonteDados.GetDataNull() ?? Enumerable.Empty<int>();
+FonteDados.ExibirLista(evitandoErroAoExibirColecaoNull);
+
+// ------------------------- EXTRA ---------------------------
+Console.WriteLine("\n---------------APPEND-------------------");
+var numerosCopiaAlteradaAppend = numeros.Append(5); //adiciona ao final
+
+Console.WriteLine("\n---------------PREPEND-------------------");
+var numerosCopiaAlteradaPrepend = numeros.Prepend(5); //adiciona no começo
+
+Console.WriteLine("\n---------------ZIP-------------------"); // junta duas fontes em uma transformando o tipo dela
+//se x tem 5 e y tem 4 ele para no 4 na junção dos elementos
+
+Console.WriteLine($"Tamanho de numeros: {numeros.ToList().Count} | Tamanho de nomes: {nomes.ToList().Count}");
+var zip = numeros.Zip(nomes, (numero, nome) => numero + " - " + nome);
+FonteDados.ExibirLista(zip);
